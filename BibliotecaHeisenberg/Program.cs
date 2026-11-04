@@ -386,5 +386,148 @@ class Program
         Console.ReadKey();
     }
 
+    static void ShowLoansMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("--- MENÚ PRÉSTAMOS ---");
+            Console.WriteLine("3.1 Crear préstamo");
+            Console.WriteLine("3.2 Listar préstamos");
+            Console.WriteLine("3.3 Ver detalle de préstamo (por ID)");
+            Console.WriteLine("3.4 Registrar devolución");
+            Console.WriteLine("3.5 Eliminar préstamo");
+            Console.WriteLine("0. Volver al menú principal");
+            Console.Write("Seleccione una opción: ");
+
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "3.1":
+                case "1":
+                    CreateLoan();
+                    break;
+                case "3.2":
+                case "2":
+                    ListLoansMenu();
+                    break;
+                case "3.3":
+                case "3":
+                    ViewLoanDetail();
+                    break;
+                case "3.4":
+                case "4":
+                    RegisterReturn();
+                    break;
+                case "3.5":
+                case "5":
+                    DeleteLoan();
+                    break;
+                case "0":
+                    back = true;
+                    break;
+                default:
+                    Console.WriteLine("\n[Error] Opción no válida. Presione una tecla...");
+                    Console.ReadKey();
+                    break;
+            }
+        }
+    }
+
+    static void CreateLoan()
+    {
+        Console.Clear();
+        Console.WriteLine("--- Crear Préstamo (Validaciones) ---");
+        Console.WriteLine("- Validar que el usuario exista y esté activo.");
+        Console.WriteLine("- Validar que el libro exista y esté disponible.");
+        Console.WriteLine("- Validar límite de préstamos por usuario.");
+        Console.WriteLine("\n[Simulación] Préstamo creado correctamente.");
+        Console.ReadKey();
+    }
+
+    static void ListLoansMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("--- LISTAR PRÉSTAMOS ---");
+            Console.WriteLine("3.2.1 Todos");
+            Console.WriteLine("3.2.2 Activos");
+            Console.WriteLine("3.2.3 Cerrados");
+            Console.WriteLine("0. Volver");
+            Console.Write("Seleccione una opción: ");
+
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "3.2.1":
+                case "1":
+                    ListLoansAll();
+                    break;
+                case "3.2.2":
+                case "2":
+                    ListLoansActive();
+                    break;
+                case "3.2.3":
+                case "3":
+                    ListLoansClosed();
+                    break;
+                case "0":
+                    back = true;
+                    break;
+                default:
+                    Console.WriteLine("\n[Error] Opción no válida. Presione una tecla...");
+                    Console.ReadKey();
+                    break;
+            }
+        }
+    }
+
+    static void ListLoansAll()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Listando todos los préstamos.");
+        Console.ReadKey();
+    }
+
+    static void ListLoansActive()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Listando préstamos activos.");
+        Console.ReadKey();
+    }
+
+    static void ListLoansClosed()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Listando préstamos cerrados.");
+        Console.ReadKey();
+    }
+
+    static void ViewLoanDetail()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Ver detalle de préstamo por ID.");
+        Console.ReadKey();
+    }
+
+    static void RegisterReturn()
+    {
+        Console.Clear();
+        Console.WriteLine("--- Registrar Devolución ---");
+        Console.WriteLine("[Simulación] Marcado como devuelto y libro disponible nuevamente.");
+        Console.ReadKey();
+    }
+
+    static void DeleteLoan()
+    {
+        Console.Clear();
+        Console.WriteLine("--- Eliminar Préstamo ---");
+        Console.WriteLine("[Simulación] Reglas sugeridas de eliminación aplicadas.");
+        Console.ReadKey();
+    }
+
     
 }

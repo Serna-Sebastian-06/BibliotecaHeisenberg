@@ -1,0 +1,14 @@
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\bin\Debug\net10.0\BibliotecaHeisenberg.exe
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\bin\Debug\net10.0\BibliotecaHeisenberg.deps.json
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\bin\Debug\net10.0\BibliotecaHeisenberg.runtimeconfig.json
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\bin\Debug\net10.0\BibliotecaHeisenberg.dll
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\bin\Debug\net10.0\BibliotecaHeisenberg.pdb
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.AssemblyInfoInputs.cache
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.AssemblyInfo.cs
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.csproj.CoreCompileInputs.cache
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.dll
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\refint\BibliotecaHeisenberg.dll
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.pdb
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.genruntimeconfig.cache
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\ref\BibliotecaHeisenberg.dll
