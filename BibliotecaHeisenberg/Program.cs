@@ -40,7 +40,7 @@ class Program
                     ShowSearchReportsMenu();
                     break;
                 case "5":
-                    Console.WriteLine("Funcionalidad de guardar/cargar datos aún no implementada.");
+                    ShowPersistenceMenu();
                     break;
                 case "6":
                     Console.WriteLine("Funcionalidad de salir aún no implementada.");
@@ -626,5 +626,73 @@ class Program
         }
     }
 
-    
+    static void ShowPersistenceMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("--- GUARDAR / CARGAR DATOS ---");
+            Console.WriteLine("5.1 Guardar datos");
+            Console.WriteLine("5.2 Cargar datos");
+            Console.WriteLine("5.3 Reiniciar datos");
+            Console.WriteLine("0. Volver al menú principal");
+            Console.Write("Seleccione una opción: ");
+
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "5.1":
+                case "1":
+                    SaveData();
+                    break;
+                case "5.2":
+                case "2":
+                    LoadData();
+                    break;
+                case "5.3":
+                case "3":
+                    ConfirmResetData();
+                    break;
+                case "0":
+                    back = true;
+                    break;
+                default:
+                    Console.WriteLine("\n[Error] Opción no válida. Presione una tecla...");
+                    Console.ReadKey();
+                    break;
+            }
+        }
+    }
+
+    static void SaveData()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Datos guardados exitosamente.");
+        Console.ReadKey();
+    }
+
+    static void LoadData()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Datos cargados exitosamente.");
+        Console.ReadKey();
+    }
+
+    static void ConfirmResetData()
+    {
+        Console.Clear();
+        Console.WriteLine("--- REINICIAR DATOS ---");
+        Console.Write("¿Está seguro de reiniciar los datos? (S/N): ");
+        string resp = Console.ReadLine();
+        if (resp != null && resp.ToUpper() == "S")
+        {
+            Console.WriteLine("\n[Simulación] Datos reiniciados con éxito.");
+        }
+        else
+        {
+            Console.WriteLine("\nOperación cancelada.");
+        }
+        Console.ReadKey();
+    }
 }
