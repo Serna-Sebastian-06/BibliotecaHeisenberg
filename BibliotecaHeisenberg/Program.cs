@@ -11,7 +11,7 @@ class Program
         bool running = true;
         while (running)
         {
-            // Console.Clear(); (implementado cuando haya más funcionalidades)
+            Console.Clear();
             Console.WriteLine("========================================");
             Console.WriteLine("         SISTEMA DE BIBLIOTECA          ");
             Console.WriteLine("========================================");
@@ -34,10 +34,10 @@ class Program
                     ShowUsersMenu();
                     break;
                 case "3":
-                    Console.WriteLine("Funcionalidad de préstamos aún no implementada.");
+                    ShowLoansMenu();
                     break;
                 case "4":
-                    Console.WriteLine("Funcionalidad de búsquedas y reportes aún no implementada.");
+                    ShowSearchReportsMenu();
                     break;
                 case "5":
                     Console.WriteLine("Funcionalidad de guardar/cargar datos aún no implementada.");
@@ -527,6 +527,103 @@ class Program
         Console.WriteLine("--- Eliminar Préstamo ---");
         Console.WriteLine("[Simulación] Reglas sugeridas de eliminación aplicadas.");
         Console.ReadKey();
+    }
+
+    static void ShowSearchReportsMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("--- BÚSQUEDAS Y REPORTES ---");
+            Console.WriteLine("4.1 Buscar libro (título/autor/id/categoría)");
+            Console.WriteLine("4.2 Buscar usuario (nombre/id)");
+            Console.WriteLine("4.3 Reportes");
+            Console.WriteLine("0. Volver al menú principal");
+            Console.Write("Seleccione una opción: ");
+
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "4.1":
+                case "1":
+                    SearchBook();
+                    break;
+                case "4.2":
+                case "2":
+                    SearchUser();
+                    break;
+                case "4.3":
+                case "3":
+                    ReportsMenu();
+                    break;
+                case "0":
+                    back = true;
+                    break;
+                default:
+                    Console.WriteLine("\n[Error] Opción no válida. Presione una tecla...");
+                    Console.ReadKey();
+                    break;
+            }
+        }
+    }
+
+    static void SearchBook()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Buscando libro por título, autor, ID o categoría.");
+        Console.ReadKey();
+    }
+
+    static void SearchUser()
+    {
+        Console.Clear();
+        Console.WriteLine("[Simulación] Buscando usuario por nombre o ID.");
+        Console.ReadKey();
+    }
+
+    static void ReportsMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("--- MENÚ REPORTES ---");
+            Console.WriteLine("1. Reporte por usuario");
+            Console.WriteLine("2. Reporte por libro");
+            Console.WriteLine("3. Reporte vencidos");
+            Console.WriteLine("4. Resumen general");
+            Console.WriteLine("0. Volver");
+            Console.Write("Seleccione una opción (o presione 0 para volver): ");
+
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    Console.WriteLine("[Simulación] Generando reporte por usuario...");
+                    Console.ReadKey();
+                    break;
+                case "2":
+                    Console.WriteLine("[Simulación] Generando reporte por libro...");
+                    Console.ReadKey();
+                    break;
+                case "3":
+                    Console.WriteLine("[Simulación] Generando reporte vencidos...");
+                    Console.ReadKey();
+                    break;
+                case "4":
+                    Console.WriteLine("[Simulación] Generando resumen general...");
+                    Console.ReadKey();
+                    break;
+                case "0":
+                    back = true;
+                    break;
+                default:
+                    Console.WriteLine("\n[Error] Opción no válida. Presione una tecla...");
+                    Console.ReadKey();
+                    break;
+            }
+        }
     }
 
     
