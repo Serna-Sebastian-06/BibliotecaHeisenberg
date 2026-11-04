@@ -43,7 +43,8 @@ class Program
                     Console.WriteLine("Funcionalidad de guardar/cargar datos aún no implementada.");
                     break;
                 case "6":
-                    Console.WriteLine("Funcionalidad de salir aún no implementada.");
+                    running = false;
+                    ConfirmExitAndSave();
                     break;
                 default:
                     Console.WriteLine("\n[Error] Opción no válida. Por favor, ingrese un número entre 1 y 6.");
@@ -626,5 +627,16 @@ class Program
         }
     }
 
-    
+    static bool ConfirmExitAndSave()
+    {
+        Console.Clear();
+        Console.Write("¿Desea guardar los datos antes de salir? (S/N): ");
+        string resp = Console.ReadLine();
+        if (resp != null && resp.ToUpper() == "S")
+        {
+            Console.WriteLine("[Simulación] Guardando datos antes de salir...");
+        }
+        Console.WriteLine("\nSaliendo del sistema. ¡Hasta luego!");
+        return true;
+    }
 }
