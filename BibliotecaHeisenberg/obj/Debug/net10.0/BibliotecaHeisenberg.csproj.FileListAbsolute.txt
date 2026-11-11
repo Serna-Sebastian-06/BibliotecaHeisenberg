@@ -12,3 +12,4 @@ C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\
 C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.pdb
 C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.genruntimeconfig.cache
 C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\ref\BibliotecaHeisenberg.dll
+C:\Users\sebas\OneDrive\Documentos\C#\BibliotecaHeisenberg\BibliotecaHeisenberg\obj\Debug\net10.0\BibliotecaHeisenberg.sourcelink.json
