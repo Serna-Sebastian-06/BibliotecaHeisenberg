@@ -1,4 +1,5 @@
 ﻿using System;
+using BibliotecaHeisenberg.Models;
 
 class Program
 {
@@ -156,7 +157,18 @@ class Program
     static void ListBooksAll()
     {
         Console.Clear();
-        Console.WriteLine("[Simulación] Listando todos los libros registrados.");
+        Console.WriteLine("--- LISTADO DE LIBROS (RESUMEN CORTO Y VALIDACIÓN) ---");
+
+        Libro libro1 = new Libro(1, "978-0307474728", "Cien años de soledad", "Gabriel García Márquez", 1967, "Novela");
+        Libro libro2 = new Libro(2, "978-8445071403", "El Señor de los Anillos", "J.R.R. Tolkien", 1954, "Fantasía");
+
+        Console.WriteLine(libro1.ResumenCorto());
+        Console.WriteLine($"-> Validación Disponible: {libro1.Disponible}\n");
+
+        Console.WriteLine(libro2.ResumenCorto());
+        Console.WriteLine($"-> Validación Disponible: {libro2.Disponible}");
+
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
         Console.ReadKey();
     }
 
@@ -177,7 +189,16 @@ class Program
     static void ViewBookDetail()
     {
         Console.Clear();
-        Console.WriteLine("[Simulación] Visualizando detalle del libro por ID/ISBN.");
+        Console.WriteLine("--- DETALLE COMPLETO DE LIBROS ---");
+
+        Libro libro1 = new Libro(1, "978-0307474728", "Cien años de soledad", "Gabriel García Márquez", 1967, "Novela");
+        Libro libro2 = new Libro(2, "978-8445071403", "El Señor de los Anillos", "J.R.R. Tolkien", 1954, "Fantasía");
+
+        Console.WriteLine(libro1.DetalleCompleto());
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine(libro2.DetalleCompleto());
+
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
         Console.ReadKey();
     }
 
@@ -308,14 +329,34 @@ class Program
     static void ListUsers()
     {
         Console.Clear();
-        Console.WriteLine("[Simulación] Listando todos los usuarios.");
+        Console.WriteLine("--- LISTADO DE USUARIOS (RESUMEN CORTO Y VALIDACIÓN) ---");
+
+        Usuario usuario1 = new Usuario(1, "1001234567", "Sebastián Serna", "sebastian@correo.com");
+        Usuario usuario2 = new Usuario(2, "1007654321", "Ender Jiménez", "ender@correo.com");
+
+        Console.WriteLine(usuario1.ResumenCorto());
+        Console.WriteLine($"-> Validación Activo: {usuario1.Activo}\n");
+
+        Console.WriteLine(usuario2.ResumenCorto());
+        Console.WriteLine($"-> Validación Activo: {usuario2.Activo}");
+
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
         Console.ReadKey();
     }
 
     static void ViewUserDetail()
     {
         Console.Clear();
-        Console.WriteLine("[Simulación] Visualizando detalle de usuario por ID/documento.");
+        Console.WriteLine("--- DETALLE COMPLETO DE USUARIOS ---");
+
+        Usuario usuario1 = new Usuario(1, "1001234567", "Sebastián Serna", "sebastian@correo.com");
+        Usuario usuario2 = new Usuario(2, "1007654321", "Ender Jiménez", "ender@correo.com");
+
+        Console.WriteLine(usuario1.DetalleCompleto());
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine(usuario2.DetalleCompleto());
+
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
         Console.ReadKey();
     }
 
@@ -489,7 +530,20 @@ class Program
     static void ListLoansAll()
     {
         Console.Clear();
-        Console.WriteLine("[Simulación] Listando todos los préstamos.");
+        Console.WriteLine("--- LISTADO DE PRÉSTAMOS (RESUMEN Y VALIDACIONES) ---");
+
+        Libro libro1 = new Libro(1, "978-0307474728", "Cien años de soledad", "Gabriel García Márquez", 1967, "Novela");
+        Usuario usuario1 = new Usuario(1, "1001234567", "Sebastián Serna", "sebastian@correo.com");
+
+        // Préstamo creado hace 5 días con límite en 2 días más
+        Prestamo prestamo1 = new Prestamo(101, libro1, usuario1, DateTime.Now.AddDays(-5), DateTime.Now.AddDays(2));
+
+        Console.WriteLine(prestamo1.ResumenCorto());
+        Console.WriteLine($"-> Validación Estado: {prestamo1.Estado}");
+        Console.WriteLine($"-> Validación EstaVencido(): {prestamo1.EstaVencido()}");
+        Console.WriteLine($"-> Validación DiasTranscurridos(): {prestamo1.DiasTranscurridos()} días");
+
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
         Console.ReadKey();
     }
 
@@ -510,7 +564,15 @@ class Program
     static void ViewLoanDetail()
     {
         Console.Clear();
-        Console.WriteLine("[Simulación] Ver detalle de préstamo por ID.");
+        Console.WriteLine("--- DETALLE COMPLETO DE PRÉSTAMO ---");
+
+        Libro libro1 = new Libro(1, "978-0307474728", "Cien años de soledad", "Gabriel García Márquez", 1967, "Novela");
+        Usuario usuario1 = new Usuario(1, "1001234567", "Sebastián Serna", "sebastian@correo.com");
+        Prestamo prestamo1 = new Prestamo(101, libro1, usuario1, DateTime.Now.AddDays(-5), DateTime.Now.AddDays(2));
+
+        Console.WriteLine(prestamo1.DetalleCompleto());
+
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
         Console.ReadKey();
     }
 
