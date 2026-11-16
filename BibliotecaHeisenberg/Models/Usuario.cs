@@ -1,32 +1,12 @@
-namespace SistemaBiblioteca.Models
+namespace BibliotecaHeisenberg.Models
 {
     public class Usuario
     {
-        public int Id
-        {
-            get { return Id; }
-            set { Id = value; }
-        }
-        public string Documento
-        {
-            get { return Documento; }
-            set { Documento = value; }
-        }
-        public string Nombre
-        {
-            get { return Nombre; }
-            set { Nombre = value; }
-        }
-        public string Contacto
-        {
-            get { return Contacto; }
-            set { Contacto = value; }
-        }
-        public bool Activo
-        {
-            get { return Activo; }
-            set { Activo = value; }
-        }
+        public int Id { get; set; }
+        public string Documento { get; set; }
+        public string Nombre { get; set; }
+        public string Contacto { get; set; }
+        public bool Activo { get; set; }
 
         public Usuario()
         {
@@ -39,7 +19,7 @@ namespace SistemaBiblioteca.Models
             Documento = documento;
             Nombre = nombre;
             Contacto = contacto;
-            Activo = true; 
+            Activo = true;
         }
 
         public string ResumenCorto()

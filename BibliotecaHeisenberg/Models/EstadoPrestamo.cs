@@ -1,4 +1,4 @@
-namespace SistemaBiblioteca.Models
+namespace BibliotecaHeisenberg.Models
 {
     public enum EstadoPrestamo
     {

@@ -1,44 +1,16 @@
 using System;
 
-namespace SistemaBiblioteca.Models
+namespace BibliotecaHeisenberg.Models
 {
     public class Prestamo
     {
-        public int Id
-        {
-            get { return Id; }
-            set { Id = value; }
-        }
-        public Libro LibroPrestado
-        {
-            get { return LibroPrestado; }
-            set { LibroPrestado = value; }
-        }
-        public Usuario UsuarioPrestatario
-        {
-            get { return UsuarioPrestatario; }
-            set { UsuarioPrestatario = value; }
-        }
-        public DateTime FechaPrestamo
-        {
-            get { return FechaPrestamo; }
-            set { FechaPrestamo = value; }
-        }
-        public DateTime FechaLimite
-        {
-            get { return FechaLimite; }
-            set { FechaLimite = value; }
-        }
-        public DateTime? FechaDevolucion
-        {
-            get { return FechaDevolucion; }
-            set { FechaDevolucion = value; }
-        }
-        public EstadoPrestamo Estado
-        {
-            get { return Estado; }
-            set { Estado = value; }
-        }
+        public int Id { get; set; }
+        public Libro LibroPrestado { get; set; }
+        public Usuario UsuarioPrestatario { get; set; }
+        public DateTime FechaPrestamo { get; set; }
+        public DateTime FechaLimite { get; set; }
+        public DateTime? FechaDevolucion { get; set; }
+        public EstadoPrestamo Estado { get; set; }
 
         // Constructor vacío
         public Prestamo()
@@ -85,8 +57,8 @@ namespace SistemaBiblioteca.Models
             return $"ID Préstamo: {Id}\n" +
                    $"Libro: {LibroPrestado?.Titulo} (ISBN: {LibroPrestado?.ISBN})\n" +
                    $"Usuario: {UsuarioPrestatario?.Nombre} (Doc: {UsuarioPrestatario?.Documento})\n" +
-                   $"Fecha Préstamo: {FechaPrestamo.ToDateString()}\n" +
-                   $"Fecha Límite: {FechaLimite.ToDateString()}\n" +
+                   $"Fecha Préstamo: {FechaPrestamo.ToShortDateString()}\n" +
+                   $"Fecha Límite: {FechaLimite.ToShortDateString()}\n" +
                    $"Fecha Devolución: {dev}\n" +
                    $"Estado: {Estado}\n" +
                    $"Días transcurridos: {DiasTranscurridos()}\n" +

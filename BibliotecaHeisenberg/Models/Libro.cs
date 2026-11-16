@@ -1,42 +1,15 @@
-namespace SistemaBiblioteca.Models
+namespace BibliotecaHeisenberg.Models
 {
     public class Libro
     {
-        public int Id
-        {
-            get { return Id; }
-            set { Id = value; }
-        }
-        public string ISBN
-        {
-            get { return ISBN; }
-            set { ISBN = value; }
-        }
-        public string Titulo
-        {
-            get { return Titulo; }
-            set { Titulo = value; }
-        }
-        public string Autor
-        {
-            get { return Autor; }
-            set { Autor = value; }
-        }
-        public string Categoria
-        {
-            get { return Categoria; }
-            set { Categoria = value; }
-        }
-        public int Anio
-        {
-            get { return Anio; }
-            set { Anio = value; }
-        }
-        public bool Disponible
-        {
-            get { return Disponible; }
-            set { Disponible = value; }
-        }
+        public int Id { get; set; }
+        public string ISBN { get; set; }
+        public string Titulo { get; set; }
+        public string Autor { get; set; }
+        public int Anio { get; set; }
+        public string Categoria { get; set; }
+        public bool Disponible { get; set; }
+
         public Libro()
         {
             Disponible = true;
