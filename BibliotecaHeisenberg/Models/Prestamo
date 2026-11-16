@@ -1,0 +1,101 @@
+using System;
+
+namespace SistemaBiblioteca.Models
+{
+    public class Prestamo
+    {
+        public int Id
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
+        public Libro LibroPrestado
+        {
+            get { return LibroPrestado; }
+            set { LibroPrestado = value; }
+        }
+        public Usuario UsuarioPrestatario
+        {
+            get { return UsuarioPrestatario; }
+            set { UsuarioPrestatario = value; }
+        }
+        public DateTime FechaPrestamo
+        {
+            get { return FechaPrestamo; }
+            set { FechaPrestamo = value; }
+        }
+        public DateTime FechaLimite
+        {
+            get { return FechaLimite; }
+            set { FechaLimite = value; }
+        }
+        public DateTime? FechaDevolucion
+        {
+            get { return FechaDevolucion; }
+            set { FechaDevolucion = value; }
+        }
+        public EstadoPrestamo Estado
+        {
+            get { return Estado; }
+            set { Estado = value; }
+        }
+
+        // Constructor vacío
+        public Prestamo()
+        {
+            Estado = EstadoPrestamo.Activo;
+            FechaDevolucion = null;
+        }
+
+        // Constructor completo
+        public Prestamo(int id, Libro libro, Usuario usuario, DateTime fechaPrestamo, DateTime fechaLimite)
+        {
+            Id = id;
+            LibroPrestado = libro;
+            UsuarioPrestatario = usuario;
+            FechaPrestamo = fechaPrestamo;
+            FechaLimite = fechaLimite;
+            FechaDevolucion = null;
+            Estado = EstadoPrestamo.Activo;
+        }
+
+        public bool EstaVencido()
+        {
+            if (Estado == EstadoPrestamo.Devuelto)
+            {
+                return false;
+            }
+            return DateTime.Now > FechaLimite;
+        }
+
+        public int DiasTranscurridos()
+        {
+            DateTime fechaFin = FechaDevolucion ?? DateTime.Now;
+            return (fechaFin - FechaPrestamo).Days;
+        }
+
+        public string ResumenCorto()
+        {
+            return $"Préstamo #{Id} | Libro: {LibroPrestado?.Titulo} | Usuario: {UsuarioPrestatario?.Nombre} | Estado: {Estado}";
+        }
+
+        public string DetalleCompleto()
+        {
+            string dev = FechaDevolucion.HasValue ? FechaDevolucion.Value.ToShortDateString() : "Pendiente";
+            return $"ID Préstamo: {Id}\n" +
+                   $"Libro: {LibroPrestado?.Titulo} (ISBN: {LibroPrestado?.ISBN})\n" +
+                   $"Usuario: {UsuarioPrestatario?.Nombre} (Doc: {UsuarioPrestatario?.Documento})\n" +
+                   $"Fecha Préstamo: {FechaPrestamo.ToDateString()}\n" +
+                   $"Fecha Límite: {FechaLimite.ToDateString()}\n" +
+                   $"Fecha Devolución: {dev}\n" +
+                   $"Estado: {Estado}\n" +
+                   $"Días transcurridos: {DiasTranscurridos()}\n" +
+                   $"¿Está vencido?: {(EstaVencido() ? "Sí" : "No")}";
+        }
+
+        public override string ToString()
+        {
+            return ResumenCorto();
+        }
+    }
+}
