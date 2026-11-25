@@ -54,6 +54,18 @@ namespace BibliotecaHeisenberg.Services
             return null;
         }
 
+        public Libro BuscarPorId(int idBuscado)
+        {
+            foreach (Libro libroActual in listaLibros)
+            {
+                if (libroActual.Id == idBuscado)
+                {
+                    return libroActual;
+                }
+            }
+            return null;
+        }
+
         public List<Libro> BuscarPorTitulo(string tituloBuscado)
         {
             List<Libro> librosEncontrados = new List<Libro>();
