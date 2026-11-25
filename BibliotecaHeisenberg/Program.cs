@@ -1,4 +1,8 @@
 ﻿using System;
+using System;
+using System.Collections.Generic;
+using BibliotecaHeisenberg.Models;
+using BibliotecaHeisenberg.Services;
 
 class Program
 {
@@ -594,6 +598,7 @@ class Program
             Console.WriteLine("2. Reporte por libro");
             Console.WriteLine("3. Reporte vencidos");
             Console.WriteLine("4. Resumen general");
+            Console.WriteLine("5. Comparación Array vs List<T>");
             Console.WriteLine("0. Volver");
             Console.Write("Seleccione una opción (o presione 0 para volver): ");
 
@@ -614,6 +619,11 @@ class Program
                     break;
                 case "4":
                     Console.WriteLine("[Simulación] Generando resumen general...");
+                    Console.ReadKey();
+                    break;
+                case "5":
+                    Console.WriteLine("[Simulación] Comparando Array vs List<T>...");
+                    CompararArrayVsList();
                     Console.ReadKey();
                     break;
                 case "0":
@@ -707,5 +717,40 @@ class Program
         }
         Console.WriteLine("\nSaliendo del sistema. ¡Hasta luego!");
         return true;
+    }
+
+    static void CompararArrayVsList()
+    {
+        Console.Clear();
+        Console.WriteLine("=== COMPARACIÓN: ARRAY VS LIST<T> ===\n");
+
+        // 1. Ejemplo usando Array (Tamaño fijo)
+        Libro[] arregloLibrosFijo = new Libro[2];
+        arregloLibrosFijo[0] = new Libro(10, "111", "Libro Array 1", "Autor A", 2020, "General");
+        arregloLibrosFijo[1] = new Libro(11, "222", "Libro Array 2", "Autor B", 2021, "General");
+
+        Console.WriteLine($"[Array] Capacidad fija: {arregloLibrosFijo.Length} elementos.");
+        foreach (Libro libroEnArreglo in arregloLibrosFijo)
+        {
+            Console.WriteLine(" - " + libroEnArreglo.ResumenCorto());
+        }
+
+        // 2. Ejemplo usando List<T> (Tamaño dinámico)
+        List<Libro> listaLibrosDinamica = new List<Libro>();
+        listaLibrosDinamica.Add(new Libro(20, "333", "Libro List 1", "Autor C", 2022, "General"));
+        listaLibrosDinamica.Add(new Libro(21, "444", "Libro List 2", "Autor D", 2023, "General"));
+        listaLibrosDinamica.Add(new Libro(22, "555", "Libro List 3", "Autor E", 2024, "General"));
+
+        Console.WriteLine($"\n[List<T>] Cantidad dinámica actual: {listaLibrosDinamica.Count} elementos.");
+        foreach (Libro libroEnLista in listaLibrosDinamica)
+        {
+            Console.WriteLine(" - " + libroEnLista.ResumenCorto());
+        }
+
+        Console.WriteLine("\n--- DIFERENCIAS CLAVE ---");
+        Console.WriteLine("1. Tamaño: El Array tiene tamaño fijo al crearse; List<T> crece o se reduce dinámicamente.");
+        Console.WriteLine("2. Métodos: List<T> incluye métodos integrados como Add(), Remove() y Count; el Array requiere manejo manual de índices.");
+        Console.WriteLine("\nPresione cualquier tecla para volver...");
+        Console.ReadKey();
     }
 }

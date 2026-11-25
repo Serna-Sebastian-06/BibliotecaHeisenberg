@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BibliotecaHeisenberg")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+923348ceca49e84d42cd33bf7688ca75e3242a55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e82f90f182082fd7435ec98cf442f77cd944fb17")]
 [assembly: System.Reflection.AssemblyProductAttribute("BibliotecaHeisenberg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BibliotecaHeisenberg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
